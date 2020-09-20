@@ -1,6 +1,8 @@
 import React from 'react';
 
 import {StyleSheet, FlatList} from 'react-native';
+import PropTypes from 'prop-types';
+import {TodoShape} from '../shared/shape/shape';
 
 import Todo from './todo';
 
@@ -22,5 +24,15 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
 });
+
+TodosList.propTypes = {
+  todos: PropTypes.arrayOf(TodoShape),
+  onToggleTodo: PropTypes.func,
+};
+
+TodosList.defaultProps = {
+  todos: [],
+  onToggleTodo: () => {},
+};
 
 export default TodosList;

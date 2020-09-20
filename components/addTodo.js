@@ -1,5 +1,6 @@
 import React from 'react';
 
+import PropTypes from 'prop-types';
 import {
   StyleSheet,
   View,
@@ -83,5 +84,19 @@ const styles = StyleSheet.create({
     fontSize: 3,
   },
 });
+
+AddTodo.propTypes = {
+  onAddPress: PropTypes.func,
+  toggleAdding: PropTypes.func,
+  onChangeText: PropTypes.func,
+  isAdding: PropTypes.bool,
+};
+
+AddTodo.defaultProps = {
+  onAddPress: () => {},
+  toggleAdding: () => {},
+  onChangeText: () => {},
+  isAdding: PropTypes.bool,
+};
 
 export default AddTodo;

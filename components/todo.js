@@ -3,6 +3,8 @@ import React from 'react';
 import {StyleSheet, Text, View, Button} from 'react-native';
 
 import Constants from '../shared/constants/constants';
+import PropTypes from 'prop-types';
+import {TodoShape} from '../shared/shape/shape';
 
 const Todo = ({todo, onToggleTodo}) => {
   return (
@@ -53,5 +55,15 @@ const styles = StyleSheet.create({
     fontSize: 3,
   },
 });
+
+Todo.propTypes = {
+  todo: TodoShape,
+  onToggleTodo: PropTypes.func,
+};
+
+Todo.defaultProps = {
+  todo: {},
+  onToggleTodo: () => {},
+};
 
 export default Todo;

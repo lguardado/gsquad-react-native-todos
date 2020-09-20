@@ -7,7 +7,7 @@ import AddTodo from '../addTodo';
 
 describe('Add Todo test', () => {
   it('renders AddTodo correctly', () => {
-    renderer.create(<AddTodo />);
+    renderer.create(<AddTodo isAdding={false} />);
   });
 
   describe('Add todo initial state', () => {
