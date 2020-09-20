@@ -8,7 +8,7 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "lintFix": "eslint . --fix"
+    "lintAndTest": "eslint . --fix && npm test"
   },
   "dependencies": {
     "@types/jest": "^26.0.14",

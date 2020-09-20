@@ -1,7 +1,8 @@
 import React from 'react';
 
-import {TextInput, TouchableWithoutFeedback} from 'react-native';
+import {TextInput, TouchableWithoutFeedback, Button} from 'react-native';
 import renderer from 'react-test-renderer';
+import constants from '../../shared/constants/constants';
 import AddTodo from '../addTodo';
 
 describe('Add Todo test', () => {
@@ -22,6 +23,21 @@ describe('Add Todo test', () => {
     it('sholud show an input when is adding a new todo', () => {
       testInstance.props.isAdding = true;
       expect(testInstance.findByType(TextInput)).toBeDefined();
+    });
+
+    it('sholud show 2 buttons when is adding a new todo', () => {
+      testInstance.props.isAdding = true;
+      expect(testInstance.findAllByType(Button).length).toBe(2);
+    });
+
+    it('sholud have and add and a cancel button', () => {
+      testInstance.props.isAdding = true;
+      expect(testInstance.findAllByType(Button)[0].props.title).toBe(
+        constants.ADD,
+      );
+      expect(testInstance.findAllByType(Button)[1].props.title).toBe(
+        constants.CANCEL,
+      );
     });
   });
 });
