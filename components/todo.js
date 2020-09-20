@@ -2,17 +2,16 @@ import React from 'react';
 
 import {StyleSheet, Text, View, Button} from 'react-native';
 
-import ACTIONS from '../store/actions';
 import Constants from '../shared/constants/constants';
 
-const Todo = ({todo, dispatch}) => {
+const Todo = ({todo, onToggleTodo}) => {
   return (
     <View style={[styles.card, todo.isCompleted && styles.gray]}>
       <Text style={[styles.text, todo.isCompleted && styles.completed]}>
         {todo.name}
       </Text>
       <Button
-        onPress={() => dispatch({type: ACTIONS.TOGGLE_TODO, payload: todo})}
+        onPress={() => onToggleTodo(todo)}
         style={styles.button}
         title={todo.isCompleted ? Constants.UNDO : Constants.COMPLETE}
       />

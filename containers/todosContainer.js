@@ -34,6 +34,11 @@ const TodosContainer = () => {
       {cancelable: false},
     );
   };
+
+  const onToggleTodo = (todo) => {
+    dispatch({type: ACTIONS.TOGGLE_TODO, payload: todo});
+  };
+
   return (
     <View style={styles.flex1}>
       <View
@@ -43,7 +48,7 @@ const TodosContainer = () => {
         {!todos.pending.length && (
           <Text style={[styles.title, styles.green]}>{constants.NO_TODOS}</Text>
         )}
-        <TodosList todos={todos.pending} dispatch={dispatch} />
+        <TodosList todos={todos.pending} onToggleTodo={onToggleTodo} />
       </View>
       {!!todos.completed.length && (
         <View
@@ -53,7 +58,7 @@ const TodosContainer = () => {
             {constants.DONE}
           </Text>
           <Button onPress={showAlert} title={constants.CLEAR_COMPLETED_TITLE} />
-          <TodosList todos={todos.completed} dispatch={dispatch} />
+          <TodosList todos={todos.completed} onToggleTodo={onToggleTodo} />
         </View>
       )}
     </View>

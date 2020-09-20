@@ -4,12 +4,12 @@ import {StyleSheet, FlatList} from 'react-native';
 
 import Todo from './todo';
 
-const TodosList = ({todos, dispatch}) => (
+const TodosList = ({todos, onToggleTodo}) => (
   <FlatList
     style={styles.pendingTodos}
     data={todos}
     renderItem={({item}) => (
-      <Todo key={item.id} todo={item} dispatch={dispatch} />
+      <Todo key={item.id} todo={item} onToggleTodo={onToggleTodo} />
     )}
   />
 );
