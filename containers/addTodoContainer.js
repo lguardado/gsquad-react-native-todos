@@ -14,7 +14,7 @@ const AddTodoContainer = ({dispatch}) => {
 
   const onAddPress = () => {
     setIsAdding(false);
-    return dispatch({type: ACTIONS.ADD_TODO, payload: name});
+    dispatch({type: ACTIONS.ADD_TODO, payload: name});
   };
 
   const onChangeText = (text) => setName(text);
