@@ -8,5 +8,5 @@ then Run `react-native run-ios` or `react-native run-android` depending on the e
 To run the tests just run `npm test`
 
 
-# Notes
+#### Notes
 This project was created with react-native init 
