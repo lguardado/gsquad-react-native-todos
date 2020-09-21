@@ -1,4 +1,5 @@
 import React from 'react';
+import { Platform } from 'react-native'
 
 import PropTypes from 'prop-types';
 import {
@@ -78,7 +79,7 @@ const styles = StyleSheet.create({
   actions: {
     paddingTop: 20,
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: Platform.OS === 'ios' ? 'center' : 'space-evenly',
   },
   button: {
     fontSize: 3,
