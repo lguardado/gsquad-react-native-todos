@@ -8,7 +8,6 @@ const AddTodoContainer = ({dispatch}) => {
   const [isAdding, setIsAdding] = useState(false);
 
   const toggleAdding = () => {
-    console.log('togle');
     setIsAdding(!isAdding);
   };
 
